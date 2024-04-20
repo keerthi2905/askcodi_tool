@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polaroid Online Store</title>
+<style>
+  body {
+    background-color: #fde2e4; /* pastel pink */
+    font-family: Arial, sans-serif;
+  }
+  nav {
+    background-color: #fef2e1; /* pastel peach */
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+  }
+  section {
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+  }
+</style>
+</head>
+<body>
+<nav>
+  <button onclick="showHome()">Home</button>
+  <button onclick="showProduct()">Product</button>
+  <button onclick="showWishlist()">Wishlist</button>
+  <button onclick="showCart()">Shopping Cart</button>
+  <button onclick="showContact()">Contact Us</button>
+</nav>
+<section id="home" style="display: none;">
+  <h1>Welcome to our Polaroid Online Store</h1>
+  <p>Discover our collection of unique polaroid prints.</p>
+  <!-- Include some images here -->
+</section>
+<section id="product" style="display: none;">
+  <h2>Products</h2>
+  <div id="productList">
+    <!-- Dynamically generated product items will appear here -->
+  </div>
+</section>
+<section id="wishlist" style="display: none;">
+  <h2>Wishlist</h2>
+  <p id="wishlistCount"></p>
+  <ul id="wishlistItems"></ul>
+</section>
+<section id="cart" style="display: none;">
+  <h2>Shopping Cart</h2>
+  <ul id="cartItems"></ul>
+  <p>Total: <span id="cartTotal">$0.00</span></p>
+</section>
+<section id="contact" style="display: none;">
+  <h2>Contact Us</h2>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" required><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" required><br><br>
+    <label for="message">Message:</label><br>
+    <textarea id="message" rows="4" required></textarea><br><br>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+<script>
+  function showHome() {
+    hideAllSections();
+    document.getElementById('home').style.display = 'block';
+  }
+  
+  function showProduct() {
+    hideAllSections();
+    document.getElementById('product').style.display = 'block';
+    // Add logic to fetch and display product data dynamically
+  }
+  
+  function showWishlist() {
+    hideAllSections();
+    document.getElementById('wishlist').style.display = 'block';
+    // Add logic to fetch and display wishlist data dynamically
+  }
+  
+  function showCart() {
+    hideAllSections();
+    document.getElementById('cart').style.display = 'block';
+    // Add logic to fetch and display cart items and total dynamically
+  }
+  
+  function showContact() {
+    hideAllSections();
+    document.getElementById('contact').style.display = 'block';
+  }
+  
+  function hideAllSections() {
+    document.querySelectorAll('section').forEach(section => {
+      section.style.display = 'none';
+    });
+  }
+</script>
+</body>
+</html>
